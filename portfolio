@@ -26,11 +26,14 @@
     <br/>
 
     <section>
-      <video width="500" controls autoplay loop playsinline>
-        <source src="alarm.MP4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-
+      <iframe width="560" height="315" 
+          src="https://www.youtube.com/embed/nzA-JEQmHBs" 
+          title="Arduino-Based Security Alarm System" 
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+      </iframe>
+      
       <h1>Arduino-Based Security Alarm System</h1>
       <p>Security Alarm System is an inexpensive, Arduino-based interactive device aimed at enhancing residential security with simple but effective electronics. Spurred by a personal interest in cybersecurity and a need for an affordable home security component, the system utilizes an infrared (IR) sensor to detect movement, temperature changes, or infrared radiation reflection towards an entry point. When it senses movement, the Arduino translates the HIGH output signal from the sensor into an action, causing a piezo buzzer to produce an oscillating "beep" sound to alert the user in real time.</p>
       <p>The project is instant response-based, and the design ensures an engaging user-machine interaction. IR sensor is taken as input, and buzzer as output. Cardboard is employed for housing in the shape of a small building with a functional door to simulate practical use. The Arduino board is placed inside the building to maintain the setup portable and lightweight.
@@ -46,5 +49,3 @@
   
 </body>
 </html>
-
-
