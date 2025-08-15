@@ -1,0 +1,60 @@
+:root {
+  color-scheme: light dark;
+  color: light-dark(#000000, #FFFFFF);
+  background-color: light-dark(#FFFFFF, #000000);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+  h1 {
+    border: 2px solid white;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+  }
+  h1 {
+    border: 2px solid black;
+  }
+}
+
+body {
+  margin: 0 auto;
+  max-width: 36em;
+  padding: 50px;
+}
+
+img {
+  width: 100%
+}
+
+div {
+  width: 100%
+}
+
+video {
+  width: 100%
+}
+
+audio {
+  width: 100%
+}
+
+h1 {
+  padding: 10px;
+  border-radius: 10px;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Futura;
+  src: url('futura.ttf');
+}
+
+* {
+  font-family: "Futura"
+}
