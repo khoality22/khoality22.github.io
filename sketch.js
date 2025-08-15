@@ -1,4 +1,5 @@
-// Write a p5js sketch that draws a painting in the abstract and colorful style of Wassily Kandinsky. Add animation. Give me just the javascript.
+// Write a p5js sketch that draws a painting in the abstract and colorful style of Wassily Kandinsky. Make it black and white. Add animation. Give me just the javascript.
+
 
 let shapes = [];
 
@@ -8,12 +9,13 @@ function setup() {
 
   // Generate random abstract shapes
   for (let i = 0; i < 20; i++) {
+    let gray = random(100, 255); // lighter grays for contrast
     shapes.push({
       type: random(["circle", "rect", "line"]),
       x: random(width),
       y: random(height),
       size: random(30, 120),
-      col: color(random(255), random(255), random(255), 180),
+      col: color(gray, 180), // grayscale with alpha
       dx: random(-1, 1),
       dy: random(-1, 1),
       rot: random(TWO_PI),
@@ -23,11 +25,11 @@ function setup() {
 }
 
 function draw() {
-  background(240, 240, 230);
+  background(20); // dark background
 
   // Animated background lines
   push();
-  stroke(50, 50, 50, 40);
+  stroke(180, 40); // light gray lines, transparent
   strokeWeight(1);
   for (let i = 0; i < 10; i++) {
     let offset = (frameCount * 0.5 + i * 40) % width;
@@ -44,7 +46,7 @@ function draw() {
 
     if (s.type === "circle") {
       ellipse(0, 0, s.size);
-      fill(255, 255, 255, 80);
+      fill(255, 80); // semi-transparent white inner circle
       ellipse(0, 0, s.size * 0.5);
     } else if (s.type === "rect") {
       rectMode(CENTER);
@@ -81,9 +83,9 @@ function drawAccents() {
   // Large concentric circles
   push();
   translate(width * 0.75, height * 0.3);
-  stroke(255, 100, 100, 150);
+  stroke(200, 150); // light gray
   ellipse(0, 0, 180);
-  stroke(100, 150, 255, 150);
+  stroke(120, 150); // medium gray
   ellipse(0, 0, 140);
   pop();
 
@@ -91,7 +93,7 @@ function drawAccents() {
   push();
   translate(width * 0.25, height * 0.7);
   rotate(frameCount * 0.01);
-  fill(255, 200, 50, 150);
+  fill(180, 150); // light gray
   triangle(-40, 40, 40, 40, 0, -40);
   pop();
 }
