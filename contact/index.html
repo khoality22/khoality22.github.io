@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.8/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.8/lib/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Khoa Nguyen</title>
+    <style>
+      h1 {
+          margin: 0 0 28px 0;
+      }
+      .label {
+          margin: 36px 0 14px;
+          font-weight: 700;
+          letter-spacing: .12em;
+          text-transform: uppercase;
+      }
+      .item {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <main>
+      <header>
+        <div class="wrap">
+          <div class="brand">
+            <a href="../index.html">Khoa Nguyen</a>
+          </div>
+          <button aria-controls="global-nav" aria-expanded="false">Menu</button>
+          <nav id="global-nav" aria-expanded="false" aria-label="Primary">
+            <ul>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/contact/">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <br/><br/>
+      <div class="wrap">
+        <h1>Contact Info</h1>
+      </div>
+      <div class="list">
+        <div class="item">
+            <div class="wrap">
+                <div class="social-links">
+                    LinkedIn
+                    <a href="https://www.linkedin.com/in/khoa-nguyen-9892032a8/" target="_blank" aria-label="LinkedIn">
+                    <img src="../linkedin.webp" alt="LinkedIn">
+                    </a>
+                    GitHub
+                    <a href="https://github.com/khoality22" target="_blank" aria-label="GitHub">
+                    <img src="../github.jpg" alt="GitHub">
+                    </a>
+                    Gmail
+                    <a href="mailto:khoanguyen0622@gmail.com" aria_label="Gmail">
+                    <img src="../gmail.png" alt="Gmail">
+                    </a>
+                    Facebook
+                    <a href="https://www.facebook.com/khoatrong.nguyen.9/" target="_blank" aria-label="LinkedIn">
+                    <img src="../facebook.webp" alt="Facebook">
+                    </a>
+                </div>
+            </div>
+        </div>
+      </div>
+      <nav class="project-nav-bottom">
+        <a href="../index.html" class="back-button">Back</a>
+      </nav>
+    </main>
+    <footer class="site-footer" role="contentinfo">
+      <div class="wrap">
+        <p>© <span id="year"></span> Khoa Nguyen</p>
+      </div>
+    </footer>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body> 
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <title>Explore Pouring vs Consumption Methods in Soda — Khoa Nguyen</title>
+    <style>
+      :root { --hero-max: 640px; } 
+
+      main.wrap { display: block; }
+
+      .project-hero {
+        position: relative;
+        border: 1px solid var(--lavender-300);
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--lavender-100);
+        margin: 24px auto 0;   
+        max-width: var(--hero-max);
+      }
+      .project-hero img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .project-caption {
+        position: absolute;
+        left: 0; right: 0; bottom: 0;
+        padding: 16px 18px;
+        color: var(--ink);
+        background: linear-gradient(
+          to top,
+          rgba(31,34,48,0.88) 0%,
+          rgba(31,34,48,0.45) 55%,
+          rgba(31,34,48,0.00) 100%
+        );
+        pointer-events: none; 
+      }
+      .project-title {
+        margin: 0 0 6px 0;
+        font-size: clamp(24px, 4.5vw, 40px);
+        line-height: 1.1;
+        font-weight: 700;
+      }
+      .project-subtitle {
+        margin: 0;
+        font-size: clamp(14px, 2.4vw, 18px);
+        line-height: 1.4;
+        color: var(--accent-slate, #B9BECE);
+      }
+      .project-body {
+        color: rgba(233,233,238,.9);
+        max-width: 75ch;
+        line-height: 1.75;
+        margin: 16px auto 0;
+        text-align: center;
+      }
+      .project-body p { margin: 0 0 1.1em; }
+      .project-media {
+        border: 1px solid var(--lavender-300);
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--lavender-100);
+        margin: 16px auto 0;
+        max-width: var(--hero-max);
+      }
+      .project-media img { width: 100%; height: auto; display: block; }
+
+      .project-nav-bottom {
+        margin-top: 28px;
+        display: flex;
+        justify-content: flex-start;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <div class="brand"><a href="../index.html">Khoa Nguyen</a></div>
+        <button aria-controls="global-nav" aria-expanded="false">Menu</button>
+        <nav id="global-nav" aria-expanded="false" aria-label="Primary">
+          <ul>
+            <li><a href="../about/">About</a></li>
+            <li><a href="../contact/">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap" style="padding-top:24px">
+      <section class="project-section">
+        <figure class="project-hero">
+          <img src="./soda.png" alt="" />
+          <figcaption class="project-caption">
+            <h1 class="project-title">Explore Pouring vs Consumption Methods in Soda</h1>
+            <p class="project-subtitle">experimental design and data analysis · 2025</p>
+          </figcaption>
+        </figure>
+
+        <div class="project-body">
+          <p>
+            I tested whether pouring and consumption methods change how much people enjoy soft drinks. Using a linear regression with an interaction term, the overall model wasn’t statistically significant (p = 0.1026), a result echoed by a permutation test (p = 0.0967).
+          </p>
+          <p>
+            Partial F-tests with Bonferroni adjustment also found no reliable effects: pouring method (p = 0.26), consumption method (p = 0.09), and their interaction (p = 0.496) were all non-significant. Exploratory coefficient checks suggested possible differences by level—“leave in can/bottle” (p ≈ 0.031) and “via straw” (p ≈ 0.049)—but these did not survive multiple-comparison correction nor overturn the non-significant model-level result; “straight into center” showed no effect (p = 0.422).
+          </p>
+          <p>
+            Overall, we find no statistically robust evidence that pouring or consumption method meaningfully alters enjoyment ratings. Future work should increase power, pre-register contrasts, and consider additional covariates (e.g., carbonation, temperature, brand) or mixed-effects designs to capture participant heterogeneity and reduce Type I/II error risk.
+          </p>
+        </div>
+
+        <figure class="project-media">
+          <img src="./soda_2.png" alt="soda demonstration" />
+        </figure>
+      </section>
+
+      <nav class="project-nav-bottom">
+        <a href="../index.html" class="back-button">Back</a>
+      </nav>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="wrap">
+        <p>© <span id="year"></span> Khoa Nguyen</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

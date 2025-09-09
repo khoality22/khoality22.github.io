@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.8/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.8/lib/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Khoa Nguyen</title>
+    <style>
+      .wrapp {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 32px 20px 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="wrap">
+          <div class="brand">
+            <a href="index.html">Khoa Nguyen</a>
+          </div>
+          <button aria-controls="global-nav" aria-expanded="false">Menu</button>
+          <nav id="global-nav" aria-expanded="false" aria-label="Primary">
+            <ul>
+              <li><a href="about/">About</a></li>
+              <li><a href="contact/">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <br /><br />
+
+      <header class="hero">
+        <h1>blend of data and design, redefining digital narrative</h1>
+      </header>
+
+      <br /><br /><br /><br />
+
+      <div class="wrap">
+        <section class="grid">
+          <a href="project1/" class="card">
+            <div class="thumb">
+              <img src="project1/layered_realities.jpg" alt="Layered Realities" />
+            </div>
+            <div class="meta">
+              <h2 class="title">Layered Realities</h2>
+              <p class="subtitle">mixed-media art installation 2025</p>
+            </div>
+          </a>
+
+          <a href="project2/" class="card">
+            <div class="thumb">
+              <img src="project2/alarm.png" alt="Security Alarm System" />
+            </div>
+            <div class="meta">
+              <h2 class="title">Security Alarm System</h2>
+              <p class="subtitle">simple arduino project 2025</p>
+            </div>
+          </a>
+
+          <a href="project3/" class="card">
+            <div class="thumb">
+              <img src="project3/forecast.png" alt="Forecast S&amp;P 500 Prices" />
+            </div>
+            <div class="meta">
+              <h2 class="title">Forecast S&amp;P 500 Prices</h2>
+              <p class="subtitle">time series data analysis 2025</p>
+            </div>
+          </a>
+
+          <a href="project4 /" class="card">
+            <div class="thumb">
+              <img src="project4 /diamond_price.jpg" alt="Investigate Factors in Influencing Diamond Prices" />
+            </div>
+            <div class="meta">
+              <h2 class="title">Investigate Factors in Influencing Diamond Prices</h2>
+              <p class="subtitle">regression data analysis 2025</p>
+            </div>
+          </a>
+
+          <a href="project5/" class="card">
+            <div class="thumb">
+              <img src="project5/soda.png" alt="Explore Pouring vs Consumption Methods in Soda" />
+            </div>
+            <div class="meta">
+              <h2 class="title">Explore Pouring vs Consumption Methods in Soda</h2>
+              <p class="subtitle">experimental design and data analysis 2025</p>
+            </div>
+          </a>
+
+          <a href="project6/" class="card">
+            <div class="thumb">
+              <img src="project6/cipher_alley.png" alt="Cipher Alley" />
+            </div>
+            <div class="meta">
+              <h2 class="title">Cipher Alley</h2>
+              <p class="subtitle">web-based interactive game (tbd)</p>
+            </div>
+          </a>
+        </section>
+      </div>
+    </main>
+    <footer class="site-footer" role="contentinfo">
+      <div class="wrap">
+        <p>© <span id="year"></span> Khoa Nguyen</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

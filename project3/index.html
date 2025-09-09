@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <title>Forecast S&amp;P 500 Prices — Khoa Nguyen</title>
+    <style>
+      :root { --hero-max: 900px; } 
+
+      main.wrap { display: block; }
+
+      .project-hero {
+        position: relative;
+        border: 1px solid var(--lavender-300);
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--lavender-100);
+        margin: 24px auto 0;   
+        max-width: var(--hero-max);
+      }
+      .project-hero img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .project-caption {
+        position: absolute;
+        left: 0; right: 0; bottom: 0;
+        padding: 16px 18px;
+        color: var(--ink);
+        background: linear-gradient(
+          to top,
+          rgba(31,34,48,0.88) 0%,
+          rgba(31,34,48,0.45) 55%,
+          rgba(31,34,48,0.00) 100%
+        );
+        pointer-events: none; 
+      }
+      .project-title {
+        margin: 0 0 6px 0;
+        font-size: clamp(24px, 4.5vw, 40px);
+        line-height: 1.1;
+        font-weight: 700;
+      }
+      .project-subtitle {
+        margin: 0;
+        font-size: clamp(14px, 2.4vw, 18px);
+        line-height: 1.4;
+        color: var(--accent-slate, #B9BECE);
+      }
+      .project-body {
+        color: rgba(233,233,238,.9);
+        max-width: 75ch;
+        line-height: 1.75;
+        margin: 16px auto 0;
+        text-align: center;
+      }
+      .project-body p { margin: 0 0 1.1em; }
+      .project-media {
+        border: 1px solid var(--lavender-300);
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--lavender-100);
+        margin: 16px auto 0;
+        max-width: var(--hero-max);
+      }
+      .project-media img { width: 100%; height: auto; display: block; }
+
+      .project-nav-bottom {
+        margin-top: 28px;
+        display: flex;
+        justify-content: flex-start;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <div class="brand"><a href="../index.html">Khoa Nguyen</a></div>
+        <button aria-controls="global-nav" aria-expanded="false">Menu</button>
+        <nav id="global-nav" aria-expanded="false" aria-label="Primary">
+          <ul>
+            <li><a href="../about/">About</a></li>
+            <li><a href="../contact/">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap" style="padding-top:24px">
+      <section class="project-section">
+        <figure class="project-hero">
+          <img src="./forecast_2.png" alt="Forecast visualization 2 for S&P 500 prices" />
+          <figcaption class="project-caption">
+            <h1 class="project-title">Forecast S&amp;P 500 Prices</h1>
+            <p class="project-subtitle">time series data analysis · 2025</p>
+          </figcaption>
+        </figure>
+
+        <div class="project-body">
+          <p>
+            Using the Box-Jenkins framework, I built an ARIMA forecasting pipeline for the S&P 500's monthly closing prices. I pulled daily data (Yahoo Finance) from Jan-2000 to Dec-2024 with quantmod in R (2025.05.0+496), aggregated to monthly, applied a Box-Cox transform (λ = -0.3030) to stabilize variance, and first-differenced to remove trend, yielding a stationary series.           
+          </p>
+          <p>
+            Guided by ACF/PACF patterns and AICc, I compared candidate models and selected ARIMA(6,1,1) whose residuals behaved like white noise and met stationarity/invertibility checks. To evaluate generalization, I trained on 2000-2023 and held out all twelve months of 2024. Back-transformed 12-month forecasts remained within prediction intervals but showed a slight downward bias, modestly underestimating actual closes.
+          </p>
+          <p>
+            The project demonstrates a transparent, reproducible workflow—data ingestion, transformation, diagnostics, model selection, and out-of-sample validation—that delivers directionally accurate, interval-aware forecasts and practical insight into market direction, volatility, and risk.
+          </p>
+        </div>
+
+        <figure class="project-media">
+          <img src="./forecast_3.png" alt="Forecast visualization 3 for S&P 500 prices" />
+        </figure>
+      </section>
+
+      <nav class="project-nav-bottom">
+        <a href="../index.html" class="back-button">Back</a>
+      </nav>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="wrap">
+        <p>© <span id="year"></span> Khoa Nguyen</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.8/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.8/lib/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Khoa Nguyen</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="wrap">
+          <div class="brand">
+            <a href="../index.html">Khoa Nguyen</a>
+          </div>
+          <button aria-controls="global-nav" aria-expanded="false">Menu</button>
+          <nav id="global-nav" aria-expanded="false" aria-label="Primary">
+            <ul>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/contact/">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div class="container">
+        <img src="../me.png">
+        <div class="bio">
+          <h1>About Khoa!</h1>
+            <p>
+              As a 4th-year Statistics & Data Science and Media Arts & Design student, <strong>Khoa Nguyen</strong>, has a
+              passion for making sense of messy data and transforming it into insights, visuals, and usable products. He 
+              has a solid foundation in statisitcal modeling and Python/R/SQL. However, he's interested in merging that rigor 
+              with digital media— UI/UX research, interaction design, and prototyping— to build interfaces that are both 
+              evidence-driven, delightful to use, but also aesthetic. 
+            </p>
+        </div>
+      </div>
+      <nav class="project-nav-bottom">
+        <a href="../index.html" class="back-button">Back</a>
+      </nav>
+    </main>
+    <footer class="site-footer" role="contentinfo">
+      <div class="wrap">
+        <p>© <span id="year"></span> Khoa Nguyen</p>
+      </div>
+    </footer>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

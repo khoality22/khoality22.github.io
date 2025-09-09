@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <title>Security Alarm System — Khoa Nguyen</title>
+    <style>
+      :root { 
+        --hero-max: 640px; 
+      } 
+
+      main.wrap { display: block; }
+
+      .project-hero {
+        position: relative;
+        border: 1px solid var(--lavender-300);
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--lavender-100);
+        margin: 24px auto 0;
+        max-width: var(--hero-max);
+        aspect-ratio: 16 / 9;
+      }
+      .project-hero iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+      }
+
+      .project-caption {
+        position: absolute; left: 0; right: 0; bottom: 0;
+        padding: 16px 18px; color: var(--ink);
+        background: linear-gradient(
+          to top,
+          rgba(31,34,48,0.88) 0%,
+          rgba(31,34,48,0.45) 55%,
+          rgba(31,34,48,0.00) 100%
+        );
+        pointer-events: none;
+      }
+      .project-title   { margin: 0 0 6px; font-size: clamp(24px, 4.5vw, 40px); line-height: 1.1; font-weight: 700; }
+      .project-subtitle{ margin: 0; font-size: clamp(14px, 2.4vw, 18px); line-height: 1.4; color: var(--accent-slate, #B9BECE); }
+
+      .project-body {
+        color: rgba(233,233,238,.9);
+        max-width: 75ch;
+        line-height: 1.75;
+        margin: 16px auto 0;
+        text-align: center;
+      }
+      .project-body p { margin: 0 0 1.1em; }
+
+      .project-media {
+        border: 1px solid var(--lavender-300);
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--lavender-100);
+        margin: 16px auto 0;
+        max-width: var(--hero-max);
+      }
+      .project-media img { width: 100%; height: auto; display: block; }
+
+      .project-nav-bottom { margin-top: 28px; display: flex; justify-content: flex-start; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <div class="brand"><a href="../index.html">Khoa Nguyen</a></div>
+        <button aria-controls="global-nav" aria-expanded="false">Menu</button>
+        <nav id="global-nav" aria-expanded="false" aria-label="Primary">
+          <ul>
+            <li><a href="../about/">About</a></li>
+            <li><a href="../contact/">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap" style="padding-top:24px">
+      <section class="project-section" style="margin-top:28px">
+        <figure class="project-hero">
+          <iframe
+            src="https://www.youtube.com/embed/nzA-JEQmHBs?rel=0"
+            title="Arduino-Based Security Alarm System"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+
+          <figcaption class="project-caption">
+            <h1 class="project-title">Security Alarm System</h1>
+            <p class="project-subtitle">simple arduino project · 2025</p>
+          </figcaption>
+        </figure>
+
+        <div class="project-body">
+          <p>
+            Security Alarm System is an inexpensive, Arduino-based interactive device aimed at enhancing residential security with simple but effective electronics. Spurred by a personal interest in cybersecurity and a need for an affordable home security component, the system utilizes an infrared (IR) sensor to detect movement, temperature changes, or infrared radiation reflection towards an entry point. When it senses movement, the Arduino translates the HIGH output signal from the sensor into an action, causing a piezo buzzer to produce an oscillating "beep" sound to alert the user in real time.
+          </p>
+          <p>
+            The project is instant response-based, and the design ensures an engaging user-machine interaction. IR sensor is taken as input, and buzzer as output. Cardboard is employed for housing in the shape of a small building with a functional door to simulate practical use. The Arduino board is placed inside the building to maintain the setup portable and lightweight.
+          </p>
+          <p>
+            In development, problems such as the buzzer having only a single-pitched tone were solved by programming alternating analogWrite() with delays to produce a more imperative alarm tone. By the unification of inexpensive components, simple assembly, and low expense, the project demonstrates how efficient security can be rapidly prototyped. The result is both a functional alarm system and a teaching example of interactive electronics in home protection.
+          </p>
+        </div>
+
+        <figure class="project-media">
+          <img src="./tinkercad.png" alt="Tinkercad circuit schematic for the Arduino-based security alarm system" />
+        </figure>
+      </section>
+
+      <nav class="project-nav-bottom">
+        <a href="../index.html" class="back-button">Back</a>
+      </nav>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="wrap">
+        <p>© <span id="year"></span> Khoa Nguyen</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
